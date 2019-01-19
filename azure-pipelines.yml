@@ -13,6 +13,7 @@ steps:
     version: '2.1.300' # replace this value with the version that you need for your project
     
 - script: |
+    dotnet restore
     dotnet build --configuration $(buildConfiguration)
     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
     dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
